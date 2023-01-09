@@ -5,7 +5,7 @@ console.log(
 
 const categories = document.querySelectorAll(".item");
 
-for (const element of categories) {
-  console.log("Category: ", element.querySelector("h2").textContent);
-  console.log("Elements: ", element.querySelectorAll("li").length);
+for (const category of categories) {
+  console.log("Category: ", category.querySelector("h2").textContent);
+  console.log("Elements: ", category.querySelectorAll("li").length);
 }
