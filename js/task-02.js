@@ -6,22 +6,29 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
+//!---------------------1 вар----------------------------------------------------
 
-const indredientsListEl = document.querySelector("#ingredients");
+const ingredientsListEl = document.querySelector("#ingredients");
+const markingList = (arg) =>
+  arg.reduce((acc, el) => (acc += `<li class = 'item'>${el}</li>`), "");
+ingredientsListEl.insertAdjacentHTML("beforeend", markingList(ingredients));
 
-function markingList(args) {
-  return args.map((ingredient) => {
-    const itemEl = document.createElement("li");
-    itemEl.textContent = ingredient;
-    itemEl.classList.add("item");
+//!---------------------2 вар----------------------------------------------------
+// const ingredientsListEl = document.querySelector("#ingredients");
 
-    return itemEl;
-  });
-}
+// function markingList(args) {
+//   return args.map((ingredient) => {
+//     const itemEl = document.createElement("li");
+//     itemEl.textContent = ingredient;
+//     itemEl.classList.add("item");
 
-indredientsListEl.append(...markingList(ingredients));
+//     return itemEl;
+//   });
+// }
 
-//!-------------------------------------------------------------------------
+// ingredientsListEl.append(...markingList(ingredients));
+
+//!---------------------3 вар----------------------------------------------------
 // const indredientsListEl = document.querySelector("#ingredients");
 
 // function markingList(args) {
