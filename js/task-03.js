@@ -18,12 +18,19 @@ galleryEl.style.listStyle = "none";
 galleryEl.style.padding = 0;
 galleryEl.style.gap = "20px";
 
-const markup = (images) =>
-  images
-    .map(
-      ({ url, alt }) =>
-        `<li><img src ='${url}' alt = '${alt}' width = '400' height = '300'></li>`
-    )
-    .join("");
+// const markup = (images) =>
+//   images
+//     .map(
+//       ({ url, alt }) =>
+//         `<li><img src ='${url}' alt = '${alt}' width = '400' height = '300'></li>`
+//     )
+//     .join("");
 
-galleryEl.insertAdjacentHTML("beforeend", markup(images));
+// galleryEl.insertAdjacentHTML("beforeend", markup(images));
+
+const imageMarkup = ({ url: src, alt }) =>
+  `<li><img src ='${src}' alt = '${alt}' width = '400' height = '300'></li>`;
+
+const galleryMarkup = images.map(imageMarkup).join("");
+
+galleryEl.insertAdjacentHTML("beforeend", galleryMarkup);
