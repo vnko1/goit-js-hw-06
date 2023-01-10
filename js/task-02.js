@@ -14,6 +14,7 @@ function markingList(args) {
     const itemEl = document.createElement("li");
     itemEl.textContent = ingredient;
     itemEl.classList.add("item");
+
     return itemEl;
   });
 }
