@@ -17,7 +17,7 @@ galleryEl.style.display = "flex";
 galleryEl.style.listStyle = "none";
 galleryEl.style.padding = 0;
 galleryEl.style.gap = "20px";
-// 1 варіант
+
 const markup = (images) =>
   images
     .map(
