@@ -27,12 +27,3 @@ const markup = (images) =>
     .join("");
 
 galleryEl.insertAdjacentHTML("beforeend", markup(images));
-
-// 2 варіант
-
-// const markupBySpread = (images) =>
-//   images.map(
-//     ({ url, alt }) =>
-//       `<li><img src ='${url}' alt = '${alt}' width = '400' height = '300'></li>`
-//   );
-// galleryEl.insertAdjacentHTML("beforeend", ...markupBySpread(images));
