@@ -25,6 +25,7 @@ const markup = (images) =>
         `<li><img src ='${url}' alt = '${alt}' width = '400' height = '300'></li>`
     )
     .join("");
+
 galleryEl.insertAdjacentHTML("beforeend", markup(images));
 
 // 2 варіант
