@@ -2,33 +2,28 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-function getRandomSize(amount) {
-  let defaultSizeValue = 0;
-  for (let i = 30; i <= 30 + 10 * (amount - 1); i += 10) {}
-}
-
 const controlsRef = document.getElementById("controls");
+const inputRef = document.getElementById("controls").firstElementChild;
 const boxesRef = document.getElementById("boxes");
 
-function createBoxes(amount) {
-  const arr = [];
-  for (let i = 1; i <= amount; i++) {
-    const divEl = document.createElement("div");
-    divEl.style.width = 30 + "px";
-    divEl.style.height = 30 + "px";
-    divEl.style.backgroundColor = getRandomHexColor();
-    arr.push(divEl);
-  }
-  // console.log(arr);
-  return arr;
-}
-// console.log(createBoxes(3));
-const boxesEl = createBoxes(3);
+const inputValue = [];
 
-const addStyle = boxesEl.map((el, index, array) => {
-  console.log(el.style.width);
+inputRef.addEventListener("input", (event) => {
+  console.log(createBoxes(event.currentTarget.value));
 });
-// const changeStyle = createBoxes(3).map((el) => {
-//   // el.style.width+=;
-// });
-boxesRef.append(...createBoxes(3));
+
+console.log(inputValue);
+function createBoxes(amount) {
+  const elSizeValue = [];
+  for (let i = 30; i <= 30 + (amount - 1) * 10; i += 10) {
+    elSizeValue.push(i);
+  }
+  return elSizeValue.map((el) => {
+    const boxEl = document.createElement("div");
+    boxEl.style.width = `${el}px`;
+    boxEl.style.height = `${el}px`;
+    boxEl.style.backgroundColor = getRandomHexColor();
+    return boxEl;
+  });
+}
+boxesRef.append(...createBoxes(5));
