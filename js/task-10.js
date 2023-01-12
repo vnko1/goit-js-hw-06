@@ -6,7 +6,7 @@ const boxesRef = document.getElementById("boxes");
 
 let outputValue;
 
-inputRef.addEventListener("blur", (event) => {
+inputRef.addEventListener("input", (event) => {
   outputValue = event.currentTarget.value;
 });
 
