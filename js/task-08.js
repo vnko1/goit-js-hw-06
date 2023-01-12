@@ -1,6 +1,6 @@
-const formData = {};
-
 const formEl = document.querySelector(".login-form");
+
+const formData = {};
 
 formEl.addEventListener("submit", handleSubmit);
 

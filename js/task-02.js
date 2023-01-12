@@ -9,8 +9,10 @@ const ingredients = [
 //!---------------------1 вар----------------------------------------------------
 
 const ingredientsListEl = document.querySelector("#ingredients");
+
 const markingList = (arg) =>
   arg.reduce((acc, el) => (acc += `<li class = 'item'>${el}</li>`), "");
+
 ingredientsListEl.insertAdjacentHTML("beforeend", markingList(ingredients));
 
 //!---------------------2 вар----------------------------------------------------
