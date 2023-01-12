@@ -8,27 +8,27 @@ const ingredients = [
 ];
 //!---------------------1 вар----------------------------------------------------
 
-const ingredientsListEl = document.querySelector("#ingredients");
-
-const markingList = (arg) =>
-  arg.reduce((acc, el) => (acc += `<li class = 'item'>${el}</li>`), "");
-
-ingredientsListEl.insertAdjacentHTML("beforeend", markingList(ingredients));
-
-//!---------------------2 вар----------------------------------------------------
 // const ingredientsListEl = document.querySelector("#ingredients");
 
-// function markingList(args) {
-//   return args.map((ingredient) => {
-//     const itemEl = document.createElement("li");
-//     itemEl.textContent = ingredient;
-//     itemEl.classList.add("item");
+// const markingList = (arg) =>
+//   arg.reduce((acc, el) => (acc += `<li class = 'item'>${el}</li>`), "");
 
-//     return itemEl;
-//   });
-// }
+// ingredientsListEl.insertAdjacentHTML("beforeend", markingList(ingredients));
 
-// ingredientsListEl.append(...markingList(ingredients));
+//!---------------------2 вар----------------------------------------------------
+const ingredientsListEl = document.querySelector("#ingredients");
+
+function markingList(args) {
+  return args.map((ingredient) => {
+    const itemEl = document.createElement("li");
+    itemEl.textContent = ingredient;
+    itemEl.classList.add("item");
+
+    return itemEl;
+  });
+}
+
+ingredientsListEl.append(...markingList(ingredients));
 
 //!---------------------3 вар----------------------------------------------------
 // const indredientsListEl = document.querySelector("#ingredients");
