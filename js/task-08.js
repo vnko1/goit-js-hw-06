@@ -1,6 +1,6 @@
 const formEl = document.querySelector(".login-form");
 
-const formData = {};
+const formData = [];
 
 formEl.addEventListener("submit", handleSubmit);
 
@@ -14,8 +14,10 @@ function handleSubmit(event) {
     return alert("Всі поля мають бути заповнені");
   }
 
-  formData[email.getAttribute("name")] = email.value;
-  formData[password.getAttribute("name")] = password.value;
+  const obj = {};
+  obj[email.getAttribute("name")] = email.value;
+  obj[password.getAttribute("name")] = password.value;
+  formData.push(obj);
   console.log(formData);
   event.currentTarget.reset();
 }
