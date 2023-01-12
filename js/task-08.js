@@ -5,6 +5,7 @@ const formData = [];
 formEl.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
+  const data = {};
   event.preventDefault();
   const {
     elements: { email, password },
@@ -14,10 +15,10 @@ function handleSubmit(event) {
     return alert("Всі поля мають бути заповнені");
   }
 
-  const obj = {};
-  obj[email.getAttribute("name")] = email.value;
-  obj[password.getAttribute("name")] = password.value;
-  formData.push(obj);
+  data[email.getAttribute("name")] = email.value;
+  data[password.getAttribute("name")] = password.value;
+
+  formData.push(data);
   console.log(formData);
   event.currentTarget.reset();
 }
