@@ -10,9 +10,11 @@ inputRef.addEventListener("input", (event) => {
   outputValue = event.currentTarget.value;
 });
 
-onCreateBtn.addEventListener("click", () =>
-  boxesRef.append(...createBoxes(outputValue))
-);
+onCreateBtn.addEventListener("click", () => {
+  outputValue === undefined
+    ? alert("Введіть дані")
+    : boxesRef.append(...createBoxes(outputValue));
+});
 
 onDestroyBtn.addEventListener("click", destroyBoxes);
 
